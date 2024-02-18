@@ -25,6 +25,7 @@ class DiscriminatorTrainer(BaseRunner):
             checkpoint_dict = utils.get_pretrained_checkpoint(config["load"], best=True)
             utils.load_discriminator_checkpoint(self.model, checkpoint_dict["state_dict"])
             print("Loaded initialization from pre-trained generator")
+        self.model = self.model.to(self.device)
 
     def init_optimizer(self, config):
         self.optimizer = runners_modules.optimizers[config["optimizer"]](self.model.parameters(),

@@ -43,7 +43,7 @@ class ARDMTrainer(BaseRunner):
         self.epoch = checkpoint_dict["epoch"]
 
     def init_model(self, config):
-        self.model = graph_ardm.GraphARDM(config)
+        self.model = graph_ardm.GraphARDM(config).to(self.device)
 
     def init_optimizer(self, config):
         self.optimizer = runners_modules.optimizers[config["optimizer"]](self.model.parameters(),

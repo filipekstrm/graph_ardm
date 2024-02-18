@@ -213,6 +213,9 @@ def get_config():
     config['cuda'] = not config['disable_cuda'] and torch.cuda.is_available()
     dt_string = datetime.now().strftime("%d-%m-%Y-%H-%M-%S")
     config['run_name'] = '_'.join([dt_string] + flags_from_command_line)
+    if not config["mode"].startswith("train"):
+        config["logger"] = "none"
+        print("Not running any training, therefore using no-op logger")
     return config
 
 

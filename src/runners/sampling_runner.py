@@ -34,6 +34,8 @@ class SamplingRunner(BaseRunner):
             self.model = discriminator_guidance
         else:
             self.model = gen_model
+        self.model = self.model.to(self.device)
+        self.model.eval()
 
     def init_optimizer(self, config):
         return
