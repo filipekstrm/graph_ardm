@@ -1,0 +1,9 @@
+{
+	"task": "qm9_no_h",
+	"val_interval": 10000,
+	"batch_size": 1024,
+	"epochs": 1000,
+	"val_ratio": 0.15,
+	"train_ratio": 0.75,
+	"n_hidden_layers": 9
+}

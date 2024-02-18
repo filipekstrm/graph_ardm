@@ -1,0 +1,8 @@
+{
+	"task": "qm9",
+	"val_interval": 10000,
+	"epochs": 2000,
+	"val_ratio": 0.15,
+	"train_ratio": 0.75,
+	"n_hidden_layers": 7
+}

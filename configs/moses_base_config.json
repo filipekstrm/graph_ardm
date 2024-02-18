@@ -1,0 +1,11 @@
+{
+	"task": "moses",
+	"val_interval": 10000,
+	"batch_size": 256,
+	"epochs": 300,
+	"val_ratio": 0.15,
+	"train_ratio": 0.75,
+	"n_hidden_layers": 12,
+	"lr": 2e4,
+	"filter": 0
+}
