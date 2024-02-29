@@ -1,0 +1,6 @@
+{
+	"include": "configs/moses/moses_base_config.json",
+	"batch_size": 128,
+	"optimizer": "adamw",
+	"mode": "train_discriminator"
+}

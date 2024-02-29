@@ -1,7 +1,6 @@
 {
-	"include": "configs/qm9_base_config.json",
+	"include": "configs/qm9/qm9_base_config.json",
 	"batch_size": 256,
-	"lr": 0.0001,
 	"mode": "train_discriminator",
 	"optimizer": "adamw"
 }

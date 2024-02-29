@@ -1,5 +1,0 @@
-{
-	"include": "configs/qm9_base_config.json",
-	"mode": "train_ardm",
-	"batch_size": 512
-}

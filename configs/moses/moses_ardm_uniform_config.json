@@ -1,0 +1,5 @@
+{
+	"include": "configs/moses/moses_ardm_base_config.json",
+	"graph_kernel": "autoreg",
+	"lr": 0.0002
+}

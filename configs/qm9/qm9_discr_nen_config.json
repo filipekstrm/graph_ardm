@@ -1,0 +1,5 @@
+{
+	"include": "configs/qm9/qm9_discr_base_config.json",
+	"graph_kernel": "nen",
+	"lr": 4e-5
+}

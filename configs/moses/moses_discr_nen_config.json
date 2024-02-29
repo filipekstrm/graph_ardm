@@ -1,0 +1,5 @@
+{
+	"include": "configs/moses/moses_discr_base_config.json",
+	"graph_kernel": "nen",
+	"lr": 5e-5
+}
