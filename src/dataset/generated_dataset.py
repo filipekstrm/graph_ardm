@@ -25,7 +25,7 @@ class GeneratedDataset(InMemoryDataset):
         self.device = config["device"]
         self.name = config["task"]
         super(GeneratedDataset, self).__init__(self.root_dir)
-        self.data, self.slices = torch.load(self.processed_paths[0])
+        self.data, self.slices = torch.load(self.processed_paths[0], map_location=torch.device(self.device))
 
     def download(self):
         raise NotImplementedError("Cannot download data, it must be generated")
