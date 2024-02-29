@@ -30,7 +30,7 @@ def get_parser():
                         help='Whether to disable cuda, even if available')
     parser.add_argument("--task", type=str.lower,
                         help="What task to perform (qm9, qm9_no_h, moses")
-    parser.add_argument("--num_samples", type=int,
+    parser.add_argument("--num_samples", type=int, default=1000,
                         help="Number of samples to evaluate on")
     parser.add_argument("--logger", type=str.lower,
                         help="Logger type (none or wandb)")
@@ -152,7 +152,7 @@ def get_parser():
     parser.add_argument("--same_order", type=int, default=1,
                         help="Same order for all particles")
 
-    parser.add_argument("--num_particles", type=int, default=-1,
+    parser.add_argument("--num_particles", type=int, default=10,
                         help="Number of particles per sample. -1 if using a full batch with particles")
 
     return parser
