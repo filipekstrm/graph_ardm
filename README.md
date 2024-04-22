@@ -1,7 +1,7 @@
 # Graph ARDMs
 This is the official public repository for the two papers
 
-* *Discriminator Guidance for Autoregressive Diffusion Models*, AISTATS 2024, [arXiv](https://arxiv.org/abs/2310.15817)
+* *Discriminator Guidance for Autoregressive Diffusion Models*, AISTATS 2024, [PMLR](https://proceedings.mlr.press/v238/ekstrom-kelvinius24a.html)
 * *Autoregressive Diffusion Models with non-Uniform Generation Orders*, ICML 2023 Workshop on Structured Probabilistic Inference and Generative Modeling, [OpenReview](https://openreview.net/forum?id=VtSmxXWcWV)
 
 by [Filip Ekström Kelvinius](https://scholar.google.com/citations?user=cwuqQtYAAAAJ&hl=en) and [Fredrik Lindsten](https://lindsten.netlify.app/).
@@ -12,7 +12,7 @@ See [INSTALL.md](INSTALL.md) for instructions on how to install required package
 ## Training
 All parameters used in this work are either default or in the respective configs. 
 
-If you use a config for training, its values will be overwritten if they are set explicitly on the command line.
+If you use a config for training, its values will be overwritten if they are also set explicitly on the command line.
 
 ### ARDM
 To train a generative model, a minimal working example is running
@@ -28,7 +28,7 @@ After training a generator, a training set for training the discriminator can be
 ### Discriminator
 To train a discriminator, a minimal command is
 
-```python main.py --config cofigs/qm9/qm9_discr_uniform_config.json --gen_data_path [path to generated training set] --logger [none/wandb]```
+```python main.py --config configs/qm9/qm9_discr_uniform_config.json --gen_data_path [path to generated training set] --logger [none/wandb]```
 
 Initializing the discriminator with the weights of a pre-trained model can be done by passing the argument ```--load [path to wandb run directory of ARDM]``` (this was done with all our experiments)
 
@@ -46,14 +46,22 @@ Options for the SMC methods that can be set:
 
 ## Citation
 ```
-@inproceedings{ekstrom_kelvinius_discriminator_2024,
-  author = {Ekstr{\"o}m Kelvinius, Filip and Lindsten, Fredrik},
-  title = {Discriminator Guidance for Autoregressive Diffusion Models},
-  booktitle = {Proceedings of the  27th International Conference on Artificial Intelligence and Statistics},
-  year = {2024},
-  address = {Valencia, Spain},
-  month = may,
+@InProceedings{ekstrom_kelvinius_discriminator_2024,
+  title = 	 { Discriminator Guidance for Autoregressive Diffusion Models },
+  author =       {Ekstr\"{o}m Kelvinius, Filip and Lindsten, Fredrik},
+  booktitle = 	 {Proceedings of The 27th International Conference on Artificial Intelligence and Statistics},
+  pages = 	 {3403--3411},
+  year = 	 {2024},
+  editor = 	 {Dasgupta, Sanjoy and Mandt, Stephan and Li, Yingzhen},
+  volume = 	 {238},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {02--04 May},
+  publisher =    {PMLR},
+  pdf = 	 {https://proceedings.mlr.press/v238/ekstrom-kelvinius24a/ekstrom-kelvinius24a.pdf},
+  url = 	 {https://proceedings.mlr.press/v238/ekstrom-kelvinius24a.html},
+  abstract = 	 { We introduce discriminator guidance in the setting of Autoregressive Diffusion Models. The use of a discriminator to guide a diffusion process has previously been used for continuous diffusion models, and in this work we derive ways of using a discriminator together with a pretrained generative model in the discrete case. First, we show that using an optimal discriminator will correct the pretrained model and enable exact sampling from the underlying data distribution. Second, to account for the realistic scenario of using a sub-optimal discriminator, we derive a sequential Monte Carlo algorithm which iteratively takes the predictions from the discriminator into account during the generation process. We test these approaches on the task of generating molecular graphs and show how the discriminator improves the generative performance over using only the pretrained model. }
 }
+
 
 @inproceedings{ekstrom_kelvinius_autoregressive_2023,
   title = {Autoregressive {{Diffusion Models}} with Non-{{Uniform Generation Order}}},
