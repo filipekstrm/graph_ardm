@@ -403,7 +403,6 @@ class BSDG(ParticleFilterDiscriminatorGuidance):
 
         if self.num_particles < 0:
             if ess < self.ess_ratio_thresh * num_particles:
-                imp_weights_prev = 1 / num_particles * torch.ones_like(imp_weights_prev)
                 a = a_resampled
             else:
                 nu = 1 / num_particles * torch.ones_like(imp_weights_prev)
@@ -414,7 +413,6 @@ class BSDG(ParticleFilterDiscriminatorGuidance):
             a = a_deterministic
             a[low_ess_bool] = a_resampled[low_ess_bool]
 
-            imp_weights_prev[low_ess_bool] = 1/num_particles
             nu[~low_ess_bool] = 1/num_particles
 
         assert len(a) == bs
@@ -610,7 +608,6 @@ class FADG(ParticleFilterDiscriminatorGuidance):
         if self.num_particles < 0:
             if ess < self.ess_ratio_thresh * num_particles:
                 a = a_resample
-                imp_weights_prev = 1 / num_particles * torch.ones_like(imp_weights_prev)
             else:
                 a = a_deterministic
                 nu = 1 / num_particles * torch.ones_like(imp_weights_prev)
@@ -620,7 +617,6 @@ class FADG(ParticleFilterDiscriminatorGuidance):
             a = a_deterministic
             a[low_ess_bool] = a_resample[low_ess_bool]
 
-            imp_weights_prev[low_ess_bool] = 1/num_particles
             nu[~low_ess_bool] = 1/num_particles
 
         assert len(a) == bs
