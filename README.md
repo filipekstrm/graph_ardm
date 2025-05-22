@@ -73,3 +73,15 @@ Options for the SMC methods that can be set:
  }
 ```
 
+## Ackowledgements
+Much of the code was adapted from the repository of [DiGress](https://github.com/cvignac/DiGress/), which is licensed under an MIT license (see the license text in the corresponding source files). Also consider citing their paper
+
+```
+@inproceedings{vignac2023digress,
+    title={DiGress: Discrete Denoising diffusion for graph generation},
+    author={Clement Vignac and Igor Krawczuk and Antoine Siraudin and Bohan Wang and Volkan Cevher and Pascal Frossard},
+    booktitle={The Eleventh International Conference on Learning Representations },
+    year={2023},
+    url={https://openreview.net/forum?id=UaAD-Nu86WX}
+}
+```
